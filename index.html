@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>kamunanya</title>
+    <link rel="stylesheet" href="kamunanya.css">
+</head>
+<body>
+    <h1>KAMU NANNYA?</h1>
+    <img src="dilan1.jpg" height="250px" width="250px" id="img-kamunannya">
+    <p id="clicks">Kamu Telah Nannya : 0</p>
+    <button onclick="plus()">Cukuran Nya Apa Bang?</button>
+    <br><br>
+    <button onclick="minus()">Maaf Dah Bang </button>
+</body>
+<script>
+    let clicks = 0;
+
+    function plus(){
+    const audio = new Audio ("kamunannya.mp3")
+    audio.play()
+    clicks++
+    document.getElementById("clicks").innerHTML = "Kamu Telah Nanya : " + clicks
+    document.getElementById("img-kamunannya").src = "dilan2.jpg"
+    audio.addEventListener("ended",function(){
+        document.getElementById("img-kamunannya").src = "dilan1.jpg"
+    })
+}
+function minus(){
+    const audio = new Audio ("rawr.mp3")
+    audio.play()
+    clicks--
+    document.getElementById("clicks").innerHTML = "Kamu Telah Nanya : " + clicks
+    document.getElementById("img-kamunannya").src = "dilan2.jpg"
+    audio.addEventListener("ended",function(){
+        document.getElementById("img-kamunannya").src = "dilan1.jpg"
+    })
+}
+</script>
+</html>
